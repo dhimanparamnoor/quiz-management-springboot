@@ -1,0 +1,269 @@
+{
+  "info": {
+    "_postman_id": "52000e6f-cbb5-4f82-8290-7cc7fcef0f57",
+    "name": "quiz_springboot",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "12453611"
+  },
+  "item": [
+    {
+      "name": "Question",
+      "item": [
+        {
+          "name": "Update_question",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"category\": \"Python\",\r\n    \"difficultyLevel\": \"Easy\",\r\n    \"id\": 54,\r\n    \"option1\": \"100\",\r\n    \"option2\": \"127\",\r\n    \"option3\": \"255\",\r\n    \"option4\": \"999\",\r\n    \"questionTitle\": \"Maximum value for byte in java\",\r\n    \"rightAnswer\": \"127\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/question/update/54",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "question",
+                "update",
+                "54"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete_Question",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n        \"category\": \"Java\",\r\n        \"difficultyLevel\": \"Easy\",\r\n        \"id\": 53,\r\n        \"option1\": \"100\",\r\n        \"option2\": \"127\",\r\n        \"option3\": \"255\",\r\n        \"option4\": \"999\",\r\n        \"questionTitle\": \"Maximum value for byte in java\",\r\n        \"rightAnswer\": \"127\"\r\n    }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/question/delete/53",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "question",
+                "delete",
+                "53"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Add_question",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"category\": \"Java\",\r\n    \"difficultyLevel\": \"Easy\",\r\n    \"option1\": \"100\",\r\n    \"option2\": \"127\",\r\n    \"option3\": \"255\",\r\n    \"option4\": \"999\",\r\n    \"questionTitle\": \"Maximum value for byte in java\",\r\n    \"rightAnswer\": \"127\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/question/add",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "question",
+                "add"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "based_On_Category",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/question/category/python",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "question",
+                "category",
+                "python"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get_All_Questions",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/question/allQuestions",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "question",
+                "allQuestions"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Quiz",
+      "item": [
+        {
+          "name": "create_quiz",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "http://localhost:8080/quiz/create?category=java&numQ=5&title=JQuiz",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "quiz",
+                "create"
+              ],
+              "query": [
+                {
+                  "key": "category",
+                  "value": "java"
+                },
+                {
+                  "key": "numQ",
+                  "value": "5"
+                },
+                {
+                  "key": "title",
+                  "value": "JQuiz"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get_quiz_question",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/quiz/get/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "quiz",
+                "get",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Response",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "[\r\n     {\r\n        \"id\": 5,\r\n        \"response\": \"A special method\"\r\n    },\r\n    {\r\n        \"id\": 17,\r\n        \"response\": \"public\"\r\n    },\r\n    {\r\n        \"id\": 2,\r\n        \"response\": \"Object-Oriented Programming\"\r\n    },\r\n    {\r\n        \"id\": 15,\r\n        \"response\": \"for loop\"\r\n    },\r\n    {\r\n        \"id\": 10,\r\n        \"response\": \"Ability to take multiple forms\"\r\n    }\r\n    \r\n    \r\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/quiz/submit/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "quiz",
+                "submit",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
